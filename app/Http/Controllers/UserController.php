@@ -19,6 +19,6 @@ class UserController extends Controller
     }
     function adminLogin($adminname){
         return view('admin.login',['admin'=>$adminname]);
-
+        //user Controller not working
     }
 }
