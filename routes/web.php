@@ -12,10 +12,12 @@ Route::get('/home', function(){
 }); We can replace with the bellow code(for openning a view) 
 */
 Route::view('/home','home');
+// Called view thru function instead of Controllers
 Route::get('/about/{name}', function($name){
     return view('about',['name'=>$name]);
 });
 
+// Called view through controller
 Route::get('user',[UserController::class, 'getUser']);
 Route::get('aboutuser',[UserController::class, 'aboutUser']);
 Route::get('username/{name}',[UserController::class,'userName']);
