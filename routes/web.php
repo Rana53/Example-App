@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController; 
+use App\Http\Controllers\UserController;
 
 Route::get('/', function(){
     return view('welcome');
@@ -12,6 +12,9 @@ Route::get('/home', function(){
 }); We can replace with the bellow code(for openning a view) 
 */
 Route::view('/home','home');
+Route::view('user-form','components.form-handler');
+Route::post('add-user',[UserController::class, 'addUser']);
+
 // Called view thru function instead of Controllers
 Route::get('/about/{name}', function($name){
     return view('about',['name'=>$name]);

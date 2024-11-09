@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     //
+    function addUser(Request $request){
+        echo "New User added<br>";
+        echo "{$request->name}";
+    }
+
+
+
     function getUser(){
         return view('user');
     }
