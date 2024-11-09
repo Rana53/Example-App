@@ -6,10 +6,19 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
+    
     function addUser(Request $request){
-        echo "New User added<br>";
-        echo "{$request->name}";
+        echo "Add user done";
+        $request->validate([
+            'name'=>'required | min:3',
+            'gender'=>'required',
+            'frameworks'=>'required',
+            'cars'=>'required',
+            'email'=>'required | email'
+        ],[
+            'name.required'=>'User name can\'t be empty',
+            'name.min'=>'username min character should be 3'
+        ]);
     }
 
 
