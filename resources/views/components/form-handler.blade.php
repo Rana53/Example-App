@@ -13,7 +13,7 @@
         @csrf
         <div>
             <label for="name">User Name</label> <br>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" value="{{old('name')}}">
             <span style="color:red">@error('name'){{$message}}@enderror</span>
         </div>
         <br>
@@ -46,7 +46,7 @@
         
         <div>
             <h3>Email</h3>
-            <input type="email" name="email">
+            <input type="email" name="email" value="{{old('email')}}">
             <span style="color:red">@error('email'){{$message}}@enderror</span>
         </div>
         <br> <br>

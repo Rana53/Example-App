@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+
 
 class UserController extends Controller
 {
     
     function addUser(Request $request){
+
         echo "Add user done";
         $request->validate([
             'name'=>'required | min:3',
@@ -24,7 +28,11 @@ class UserController extends Controller
 
 
     function getUser(){
-        return view('user');
+        echo "Hello User <br>";
+        $users = DB::select('select * from users'); 
+        return view('user',['users'=>$users]);
+
+
     }
     function aboutUser(){
         return "About Mango People";
