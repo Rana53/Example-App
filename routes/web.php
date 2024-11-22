@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use PhpParser\Node\Expr\FuncCall;
@@ -33,5 +34,5 @@ Route::get('user',[UserController::class, 'getUser']);
 Route::get('aboutuser',[UserController::class, 'aboutUser']);
 Route::get('username/{name}',[UserController::class,'userName']);
 Route::get('admin/{adminname}',[UserController::class,'adminLogin']);
-
+Route::get('/users-student',[StudentController::class,'getStudents']);
 //Route::get('admin',[UserController::class, 'adminLogin']);
