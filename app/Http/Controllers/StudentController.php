@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     //
     function getStudents(){
-        return "Test Function";
+        $students = \App\Models\Student::all();
+        return view('students',['data' => $students]);
     }
 }
